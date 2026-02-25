@@ -4,50 +4,60 @@ import MenuIcon from './icons/MenuIcon.astro'
 import Search from '@/components/Search'
 import TagIcon from './icons/TagIcon.astro'
 import ToggleTheme from './ToggleTheme.astro'
-import { SOCIALNETWORKS } from '@/data/links'
+import { siteConfig } from '@/site-config'
+
+const now = new Date()
+const dateFormatted = now.toLocaleDateString('en-GB', {
+	weekday: 'long',
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric'
+})
 ---
 
-<header class='relative flex items-center h-12 font-semibold'>
-	<a class='text-lg mr-auto' href='/'>Home</a>
+<!-- Nav bar: date + links (navy) -->
+<header
+	class='relative flex justify-between items-center h-16 md:h-40px font-semibold bg-black text-white border-b-4 border-zinc-600 px-4 md:px-6 max-w-[72rem] mx-auto'
+>
+	<a href='/' class='flex items-center' aria-label={siteConfig.title}>
+		<img
+			src='/Tahpe_Logo-Variation-3-Horizontal-White.png'
+			alt={siteConfig.title}
+			class='h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain'
+		/>
+	</a>
+	<div class='flex items-center'>
+		<span class='text-xs md:text-sm uppercase tracking-widest opacity-95'>{dateFormatted}</span>
+	</div>
 
 	<div
 		id='astro-header-drawer'
-		class='shadow rounded-l-lg md:bg-transparent dark:md:bg-transparent bg-white dark:bg-[#0a0910] md:shadow-none md:rounded-none md:border-none md:h-auto md:static absolute transition-transform duration-300 ease-in translate-x-96 md:translate-x-0 top-12 -right-5 pl-4 pt-6 pb-4 md:p-0 h-[200px] w-[200px] z-50'
+		class='flex flex-col md:flex-row md:justify-between md:items-center shadow rounded-l-lg bg-tahpe-navy md:bg-transparent md:shadow-none md:rounded-none md:border-none md:h-auto md:static absolute transition-transform duration-300 ease-in translate-x-96 md:translate-x-0 top-[9rem] md:top-0 -right-5 pl-4 pt-6 pb-4 md:p-0 h-[200px] w-[200px] md:w-auto md:h-auto z-50'
 	>
-		<nav
-			class='flex h-full flex-col justify-between gap-12 text-left md:flex-row md:w-full md:gap-5'
-		>
-			<div
-				class='flex flex-col gap-4 md:flex-row md:border-r-2 border-black pr-4 dark:border-white'
-			>
-				<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
+		<nav class='h-full flex flex-col text-left md:flex-row md:w-full md:items-center md:gap-6 mr-4'>
+			<div class='flex flex-col gap-4 md:flex-row md:border-r-2 border-white/30 pr-4'>
+				<HeaderLink
+					href='/tags'
+					class='flex items-center gap-1 text-2xl md:text-base text-white hover:text-tahpe-blue'
+				>
 					<TagIcon /> Tags
 				</HeaderLink>
 			</div>
-
-			<div class='flex justify-center items-center md:justify-end gap-3 md:p-0'>
-				{
-					SOCIALNETWORKS.map((network) => (
-						<HeaderLink class='' href={network.url} target='_blank' aria-label={network.name}>
-							<span>{<network.icon />} </span>
-						</HeaderLink>
-					))
-				}
-			</div>
 		</nav>
-	</div>
 
-	<div class='flex items-center gap-3 md:pl-3' transition:persist='navbar'>
-		<div>
-			<Search />
+		<div class='flex justify-end items-center gap-3' transition:persist='navbar'>
+			<div>
+				<Search />
+			</div>
+			<ToggleTheme />
+			<button id='astro-header-drawer-button' type='button' class='md:ml-6 md:hidden'>
+				<MenuIcon />
+				<span class='sr-only'>Show Menu</span>
+			</button>
 		</div>
-		<ToggleTheme />
-		<button id='astro-header-drawer-button' type='button' class='md:ml-6 md:hidden'>
-			<MenuIcon />
-			<span class='sr-only'>Show Menu</span>
-		</button>
 	</div>
 </header>
+
 <script>
 	document.addEventListener('click', (event) => {
 		const menu = document.getElementById('astro-header-drawer')

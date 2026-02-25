@@ -1,21 +1,22 @@
 ---
 import ListCategories from '@/components/ListCategories'
 import ListPosts from '@/components/ListPosts'
-import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
 import { getPosts } from '@/utils'
-import { siteConfig } from '@/site-config'
 
-const MAX_POSTS = 5 // max number of posts to show on the home page
+const MAX_POSTS = 12 // newspaper-style: show more stories on the front page
 const posts = await getPosts(MAX_POSTS)
 ---
 
 <BaseLayout title='Home'>
-	<TitlePage title={siteConfig.title} />
 	<ListCategories />
 
 	<div>
-		<h2 class='text-lg font-medium tracking-wide text-end'>Latest Posts</h2>
+		<h2
+			class='text-xl font-display font-bold text-black border-b-2 border-zinc-600 pb-2 mb-6 uppercase tracking-wider dark:text-white dark:border-zinc-300'
+		>
+			Today's headlines
+		</h2>
 		<ListPosts FirstBig={true} posts={posts} />
 	</div>
 </BaseLayout>

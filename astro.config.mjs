@@ -8,6 +8,15 @@ import { siteConfig } from './src/data/site.config'
 // https://astro.build/config
 export default defineConfig({
 	site: siteConfig.site,
+	image: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'images.unsplash.com',
+				pathname: '/**'
+			}
+		]
+	},
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,

@@ -2,23 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--tahpe-navy: #273993;
+	--tahpe-blue: #3B8BCA;
+	--paper: #f5f2eb;
+	--ink: #1a1a1a;
+}
+
 @layer base {
-	/* body {
-		transition: background-color 0.5s ease;
-	} */
+	body {
+		@apply font-body text-ink bg-paper;
+	}
 
 	.prose code {
 		@apply text-base;
 	}
 
-	/* prose styles here */
 	.prose h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply text-zinc-800 dark:text-zinc-100   !important;
+	.prose h2,
+	.prose h3,
+	.prose h4,
+	.prose h5,
+	.prose h6 {
+		@apply text-tahpe-navy font-display !important;
+	}
+
+	html.dark .prose h1,
+	html.dark .prose h2,
+	html.dark .prose h3,
+	html.dark .prose h4,
+	html.dark .prose h5,
+	html.dark .prose h6 {
+		@apply text-tahpe-blue !important;
+	}
+
+	.prose a {
+		@apply text-tahpe-blue hover:text-tahpe-navy underline;
+	}
+
+	html.dark .prose a {
+		@apply text-tahpe-blue hover:!text-white;
 	}
 
 	html.dark .shiki,

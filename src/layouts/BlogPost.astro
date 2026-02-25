@@ -1,30 +1,26 @@
 ---
-import type { CollectionEntry } from 'astro:content'
 import FormattedDate from '@/components/FormattedDate'
 import BaseLayout from '@/layouts/BaseLayout'
 import Tag from '@/components/Tag'
 import type { MarkdownHeading } from 'astro'
 import { Image } from 'astro:assets'
+import type { BlogPostData } from '@/data/posts'
 
 type Props = {
-	id: CollectionEntry<'blog'>['id']
-	data: CollectionEntry<'blog'>['data']
+	id: string
+	data: BlogPostData
 	headings: MarkdownHeading[]
 	readTime: string
 }
 
 const { data, readTime, headings, id } = Astro.props
 const { title, description, pubDate, heroImage, tags } = data
-
-const articleDate = pubDate.toISOString()
+const imageSrc = heroImage
+const articleDate =
+	pubDate instanceof Date ? pubDate.toISOString() : new Date(pubDate).toISOString()
 ---
 
-<BaseLayout
-	title={title}
-	description={description}
-	image={heroImage?.src}
-	articleDate={articleDate}
->
+<BaseLayout title={title} description={description} image={imageSrc} articleDate={articleDate}>
 	<article class='min-w-full md:py-4 sm:max-w-none md:max-w-none'>
 		<header class='mb-3 flex flex-col justify-center items-center gap-6'>
 			<div class='flex flex-col gap-2'>
@@ -48,9 +44,9 @@ const articleDate = pubDate.toISOString()
 
 		<>
 			{
-				heroImage && (
+				imageSrc && (
 					<Image
-						src={heroImage}
+						src={imageSrc}
 						width={1000}
 						height={500}
 						quality={100}
