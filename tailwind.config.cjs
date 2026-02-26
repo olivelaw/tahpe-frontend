@@ -16,8 +16,8 @@ module.exports = {
 				ink: '#1a1a1a'
 			},
 			fontFamily: {
-				body: ['Georgia', 'Times New Roman', 'serif'],
-				display: ['Georgia', 'Times New Roman', 'serif']
+				body: ['Lora', 'Georgia', 'serif'],
+				display: ['"Playfair Display"', 'Georgia', 'serif']
 			},
 			gridTemplateColumns: {
 				list: 'repeat(auto-fill, minmax(400px, max-content))'

@@ -12,7 +12,7 @@ export default defineConfig({
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: 'images.unsplash.com',
+				hostname: 'picsum.photos',
 				pathname: '/**'
 			}
 		]

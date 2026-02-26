@@ -29,8 +29,7 @@ const BLOG_POSTS: Omit<BlogPostEntry, 'readTime'>[] = [
 			title: 'Welcome to the Blog',
 			description: 'A short introduction and welcome message for readers.',
 			pubDate: new Date('2026-02-01'),
-			heroImage:
-				'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&h=400&fit=crop',
+			heroImage: 'https://picsum.photos/seed/welcome/600/400',
 			category: 'Category 1',
 			tags: ['welcome', 'intro'],
 			draft: false
@@ -54,8 +53,7 @@ That's it. Happy writing!`
 			title: 'Second Post',
 			description: 'Another sample post with placeholder content.',
 			pubDate: new Date('2026-02-03'),
-			heroImage:
-				'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=600&h=400&fit=crop',
+			heroImage: 'https://picsum.photos/seed/second-post/600/400',
 			category: 'Category 2',
 			tags: ['sample', 'demo'],
 			draft: false
@@ -76,8 +74,7 @@ You can replace this with real content. The blog uses object-based data from \`s
 			title: 'Third Post',
 			description: 'A third dummy post for testing pagination and layout.',
 			pubDate: new Date('2026-02-06'),
-			heroImage:
-				'https://images.unsplash.com/photo-1455390692773-6737d0c43e1d?w=600&h=400&fit=crop',
+			heroImage: 'https://picsum.photos/seed/third-post/600/400',
 			category: 'Category 3',
 			tags: ['example', 'test'],
 			draft: false
@@ -100,8 +97,7 @@ This keeps the same structure as the others so you can see how the blog behaves 
 			description:
 				'Voters turned out in large numbers for this year’s council and mayoral races across the region.',
 			pubDate: new Date('2026-02-08'),
-			heroImage:
-				'https://images.unsplash.com/photo-1540914124281-64658dd1508b?w=600&h=400&fit=crop',
+			heroImage: 'https://picsum.photos/seed/local-elections/600/400',
 			category: 'Category 1',
 			tags: ['politics', 'local', 'elections'],
 			draft: false
@@ -120,8 +116,7 @@ Preliminary counts suggest a clear shift in several key wards. Full results will
 			description:
 				'The long-awaited central library has opened with extended hours and a dedicated children’s wing.',
 			pubDate: new Date('2026-02-10'),
-			heroImage:
-				'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop',
+			heroImage: 'https://picsum.photos/seed/new-library/600/400',
 			category: 'Category 2',
 			tags: ['culture', 'community', 'books'],
 			draft: false
@@ -142,8 +137,7 @@ Preliminary counts suggest a clear shift in several key wards. Full results will
 			description:
 				'A busy weekend of fixtures saw both United and City secure important victories.',
 			pubDate: new Date('2026-02-12'),
-			heroImage:
-				'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=400&fit=crop',
+			heroImage: 'https://picsum.photos/seed/sports-roundup/600/400',
 			category: 'Category 3',
 			tags: ['sports', 'football', 'weekend'],
 			draft: false
@@ -162,8 +156,7 @@ Full reports and reaction from managers in tomorrow’s edition.`
 			description:
 				'Strong winds and high tides are forecast for the next 48 hours. Travel advice has been updated.',
 			pubDate: new Date('2026-02-15'),
-			heroImage:
-				'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop',
+			heroImage: 'https://picsum.photos/seed/weather-warning/600/400',
 			category: 'Category 4',
 			tags: ['weather', 'safety', 'travel'],
 			draft: false
@@ -183,8 +176,7 @@ Full reports and reaction from managers in tomorrow’s edition.`
 			description:
 				'Markets held steady after the central bank left interest rates unchanged. Analysts expect a quiet week.',
 			pubDate: new Date('2026-02-18'),
-			heroImage:
-				'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
+			heroImage: 'https://picsum.photos/seed/business-brief/600/400',
 			category: 'Category 5',
 			tags: ['business', 'markets', 'economy'],
 			draft: false
@@ -203,8 +195,7 @@ Most analysts expect no change until the summer.`
 			description:
 				'This year’s arts festival will feature over 50 events, from theatre to street performance.',
 			pubDate: new Date('2026-02-20'),
-			heroImage:
-				'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&h=400&fit=crop',
+			heroImage: 'https://picsum.photos/seed/arts-festival/600/400',
 			category: 'Category 1',
 			tags: ['arts', 'festival', 'culture'],
 			draft: false
@@ -225,8 +216,7 @@ Most analysts expect no change until the summer.`
 			description:
 				'A new report highlights the need for extra funding and staff in primary and secondary schools.',
 			pubDate: new Date('2026-02-25'),
-			heroImage:
-				'https://images.unsplash.com/photo-1523050854058-8dfc10c5a7b1?w=600&h=400&fit=crop',
+			heroImage: 'https://picsum.photos/seed/education-report/600/400',
 			category: 'Category 2',
 			tags: ['education', 'schools', 'policy'],
 			draft: false
